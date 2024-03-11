@@ -3,14 +3,27 @@
 {% block pageheading %}welcome{% endblock %}
 
 {% block main %}
-
-
     <table>
+        <th>Name</th>
+        <th>Year Group</th>
+        <th>Set Homework</th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Subject</th>
 
-            <tr><td>{{ homework[0] }}</td></tr>
-            <tr><td>{{ homework[1] }}</td></tr>
-            <tr><td>{{ homework[2] }}</td></tr>
+        {% for work in homework %}
+            <tr>
+                <td> {{ work[4] }} {{ work[5] }}</td>
+                <td> {{ work[6] }}</td>
+                <td> {{ work[8] }}</td>
+                <td> {{ work[9] }}</td>
+                <td> {{ work[10] }}</td>
+                <td> {{ work[11] }}</td>
+            </tr>
 
+
+
+
+        {% endfor %}
     </table>
-
 {% endblock %}
