@@ -24,7 +24,9 @@ def create_connection(db_file):
 @app.route('/')
 def homework_page():  # put application's code here
     con = create_connection(DATABASE)
-    query = "SELECT * FROM homework INNER JOIN students ON Student_id_fk=Student_id INNER JOIN work_table ON slot_1_fk=work_id;"
+    query = "SELECT first_name, last_name, yr_group, title, description, due_date, subject FROM homework " \
+            "INNER JOIN students ON Student_id_fk=Student_id " \
+            "INNER JOIN work_table ON slot_1_fk=work_id;"
     cur = con.cursor()
     cur.execute(query)
     homework_list = cur.fetchall()
